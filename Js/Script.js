@@ -2,7 +2,7 @@ console.log("Script")
 
 const lblmessage = document.querySelector(".message")
 console.log("lblmessage")
-const pbAgain = document.querySelector(".again")
+const btnAgain = document.querySelector(".again")
 
 const lblnumber = document.querySelector(".number")
 
@@ -14,11 +14,11 @@ inpGuess.value = 10
 
 const btnCheck = document.querySelector(".check")
 
-let randNum = 0
+let randNum = 0 + 1
 function genRandomNumber(){
     const ranNumber = Math.random()*20
-    const ran = Math.trunc(ranNumber)
-    console.log(ran)
+    const randNum = Math.trunc(ranNumber)
+    console.log(randNum)
 }
 
 function setNumber(){
@@ -28,4 +28,12 @@ function setNumber(){
     console.log(rand2)
 }
 
+function score(){
+    if(inpGuess == randNum){
+        lblscore + 1
+    }
+}
+
 btnCheck.addEventListener('click', setNumber)
+
+btnAgain.addEventListener('click', genRandomNumber)
